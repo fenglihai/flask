@@ -62,7 +62,7 @@ def initdb(drop):
     click.echo('Initialized database')
 
 #创建电影条目  
-@app.route('/', methods=['GET','POST'])
+@app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
         title = request.form.get('title')    # 传入表单对应输入字段的 name 值
@@ -83,7 +83,7 @@ def index():
 
 
 #编辑电影条目
-@app.route('/movie/edit/<int:movie_id>', methods=['GRT','POST'])
+@app.route('/movie/edit/<int:movie_id>', methods=['GET','POST'])
 def edit(movie_id):
     movie = Movie.query.get_or_404(movie_id)
 
